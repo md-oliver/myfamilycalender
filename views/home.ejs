@@ -1,0 +1,52 @@
+<%- include('header.ejs') %>
+<main>
+    <div class="grid-container">
+        <% for (let i = 0; i < months.length; i++) { %>
+            <div class="month">
+                <h2 class="month-heading"><%= months[i].month %></h2>
+                <div class="month-content">
+
+                <% for (let j = 0; j < data.length; j++) { %>
+                    <% if(data[j].month === months[i].month) { %>
+                        <div class="event">
+                        <input type="hidden" name="category" value="<%-data[j].category%>">
+                        <p class="date"><%= data[j].day %></p>
+                        <p class="description"><%= data[j].description %></p>
+                        <p class="date">(<%= data[j].year %>)</p>
+                    </div>
+                <% } } %>
+                </div>
+            </div>
+       <% } %>
+    </div>
+</main>
+<%- include('footer.ejs') %>
+
+<script>
+    const getCategory = (category) => {
+        switch (category) {
+            case "Funeral":
+                return "#6dd3ce";
+            case "Birthday":
+                return "#c8e9a0";
+            case "Anniversary":
+                return "#dabfff";
+            default:
+                return "#dabfff";
+        }
+    };
+
+    const entries = document.querySelectorAll(".event");
+
+    entries.forEach((child) => {
+        const categoryElement = child.children[0];
+        
+        if(categoryElement.name === "category"){
+            child.style.backgroundColor = getCategory(categoryElement.value);
+        }
+        
+    })
+</script>
+
+
+               

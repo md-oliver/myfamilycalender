@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+.bbh-sans-hegarty-regular {
+	font-family: "BBH Sans Hegarty", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+:root {
+	--light: #ececec;
+	--dark: #333;
+
+	--blue: #6dd3ce;
+	--green: #c8e9a0;
+	--orange: #f7a278;
+	--indigo: #907ad6;
+	--purple: #dabfff;
+
+	--grey: #727272;
+	--light-grey: #c2c2c2;
+}
+
+body {
+	background-color: var(--light);
+	height: 100vh;
+
+	font-family: "Rubik", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+}
+
+header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 10dvh;
+	place-content: center;
+	place-items: center;
+	/* color: var(--indigo); */
+	background-color: #727272;
+	color: var(--light);
+	text-transform: uppercase;
+
+	.logo-container {
+		height: 60px;
+		display: flex;
+		place-items: center;
+		gap: 0.5rem;
+
+		.logo {
+			height: 45px;
+			width: 45px;
+			fill: var(--light);
+		}
+	}
+
+	.login-btn {
+		min-height: 60px;
+		min-width: 125px;
+		font-size: 1.2rem;
+		font-weight: 700;
+		letter-spacing: 1px;
+		cursor: pointer;
+		box-shadow: none;
+		outline: none;
+		border: none;
+		background-color: var(--dark);
+		color: var(--light);
+		border-radius: 30px;
+		text-transform: uppercase;
+
+		font-family: "Rubik", sans-serif;
+		font-optical-sizing: auto;
+		font-style: normal;
+	}
+
+	.login-btn:hover {
+		opacity: 0.7;
+		scale: 1.05;
+	}
+}
+
+main {
+	min-height: 80vh;
+	padding: 2rem;
+	overflow-y: auto;
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+		gap: 1rem;
+
+		.month {
+			border: 5px solid var(--light-grey);
+			color: var(--dark);
+			border-radius: 20px;
+
+			.month-heading {
+				text-transform: uppercase;
+				text-align: center;
+				width: 100%;
+				border-bottom: 5px solid var(--light-grey);
+				background-color: var(--light-grey);
+				padding: 0.5rem;
+			}
+
+			.month-content {
+				padding: 0.5rem;
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+
+			.event {
+				min-height: 45px;
+				display: grid;
+				grid-template-columns: 1fr 3fr 1fr;
+				gap: 0.2rem;
+				border: 1px solid var(--light-grey);
+				border-radius: 5px;
+				/* justify-content: space-around; */
+				place-items: center;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+footer {
+	height: 10vh;
+	color: var(--grey);
+	border-top: 3px solid var(--grey);
+	display: block;
+	place-content: center;
+	place-items: center;
+}
