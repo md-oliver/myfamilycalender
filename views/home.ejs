@@ -5,7 +5,6 @@
             <div class="month">
                 <h2 class="month-heading"><%= months[i].month %></h2>
                 <div class="month-content">
-
                 <% for (let j = 0; j < data.length; j++) { %>
                     <% if(data[j].month === months[i].month) { %>
                         <div class="event">
@@ -26,11 +25,11 @@
     const getCategory = (category) => {
         switch (category) {
             case "Funeral":
-                return "#6dd3ce";
-            case "Birthday":
-                return "#c8e9a0";
+                return "#D9DBF1";
+            case "Birthday": 
+                return "#f5f5e2";
             case "Anniversary":
-                return "#dabfff";
+                return "#DBF4A7";
             default:
                 return "#dabfff";
         }
