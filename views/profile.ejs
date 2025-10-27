@@ -17,28 +17,8 @@
                 <button class="login-btn" onclick="toggleLogin()">Login</button>
             </nav>
         </header>
-        <div id="login-container" hidden>
-              <form id="login-form" action="/login" method="POST" >
-                  <label for="username">User:</label>
-                  <input type="text" name="username" id="username" autocomplete="off">
-                  <label for="password">Password:</label>
-                  <input type="password" name="password" id="password" autocomplete="off">
-                  <button class="form-login" type="submit">Login</button>
+        <div id="logout-container" >
+              <form id="logout-form" action="/logout" method="POST" >
+                  <button class="form-logout" type="submit">Logout</button>
               </form>
           </div>
-
-        <script>
-            function toggleLogin () {
-                const loginContainer = document.getElementById('login-container');
-                const isHidden = loginContainer.toggleAttribute('hidden');
-                // const isHidden = loginContainer.getAttribute('hidden');
-
-                if(!isHidden) {
-                    loginContainer.style.display('flex');
-                    
-                } else {
-                    loginContainer.style.display('none');
-                }
-
-            }
-        </script>
