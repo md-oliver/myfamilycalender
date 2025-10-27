@@ -7,11 +7,12 @@
                 <div class="month-content">
                 <% for (let j = 0; j < data.length; j++) { %>
                     <% if(data[j].month === months[i].month) { %>
-                        <div class="event">
+                        <% const date = new Date().getFullYear(); %>
+                    <div class="event">
                         <input type="hidden" name="category" value="<%-data[j].category%>">
                         <p class="date"><%= data[j].day %></p>
                         <p class="description"><%= data[j].description %></p>
-                        <p class="date">(<%= data[j].year %>)</p>
+                        <p class="year" >(<%= date-data[j].year %>)</p>
                     </div>
                 <% } } %>
                 </div>
@@ -25,11 +26,11 @@
     const getCategory = (category) => {
         switch (category) {
             case "Funeral":
-                return "#D9DBF1";
+                return "#fb6376";
             case "Birthday": 
-                return "#f5f5e2";
+                return "#58a4b0";
             case "Anniversary":
-                return "#DBF4A7";
+                return "#5dd9c1";
             default:
                 return "#dabfff";
         }
@@ -41,7 +42,7 @@
         const categoryElement = child.children[0];
         
         if(categoryElement.name === "category"){
-            child.style.backgroundColor = getCategory(categoryElement.value);
+            child.style.color = getCategory(categoryElement.value);
         }
         
     })
